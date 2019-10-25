@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>Fit Club</title>
+		<meta name="description" content="">
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+		<!-- Favicons -->
+	
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/icons/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icons/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icons/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="assets/images/icons/apple-touch-icon-57-precomposed.png">
+		<!-- <link rel="shortcut icon" href="assets/images/DAS Xpress.png"> -->
+	
+		<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+	
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+		<link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+	
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+		<!-- Bootstrap core CSS -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Material Design Bootstrap -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
+		
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.min.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+	</head>
+
+<body id="membershipPage" class="theme-blue bg-indigo" style="background:#484684 !important;">
+<div style="margin:0px;padding:0px;position:fixed;background: #4568DC;
+background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+background: linear-gradient(to right, #B06AB3, #4568DC);
+width:100%;height:100%; opacity: 0.8;"></div>
+
+<div class="container-fluid">
+	<div style="position:fixed;z-index:999;width:100%;top:0px;right:0px;left:0px;">
+		<nav class="navbar navbar-dark navbar-2 purple-gradient col-12">
+
+			<!-- Navbar brand -->
+			<a class="navbar-brand" href="#"><i class="fas fa-angle-left"></i></a>
+			<center>
+					<h5 class="text-white">Profile</h5>
+			</center>
+			<!-- Collapse button -->
+			<button class="navbar-toggler collapsed col-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent14" aria-controls="navbarSupportedContent14" aria-expanded="false" aria-label="Toggle navigation">
+				<img src="https://media.gq.com/photos/56cca7d9154b2d0e6b12585d/1:1/w_80,c_limit/john-jannuzzi.jpg" width="100%" class="rounded-circle z-depth-0 float-right" alt="avatar image">
+			</button>
+
+			<!-- Collapsible content -->
+			<div class="navbar-collapse collapse" id="navbarSupportedContent14">
+
+				<!-- Links -->
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link waves-effect waves-light" href="#"><i class="fas fa-user-alt"></i>&nbsp;Profile <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-effect waves-light" href="#"><i class="fas fa-id-card-alt"></i>&nbsp;Membership</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-effect waves-light" href="#"><i class="fas fa-cog"></i>&nbsp;Setting</a>
+					</li>
+				</ul>
+				<!-- Links -->
+
+			</div>
+			<!-- Collapsible content -->
+
+		</nav>
+	</div>
+	<div class="clearfix"></div><br>
+	<div class="clearfix"></div><br>
+	<div class="clearfix"></div><br>
+	<div style="width:90%;margin:0px auto;">
+		<div class="row" style="margin-left:0px;margin-right:0px;z-index:1;">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-justify">
+				<div class="text-center" ><img src="assets/images/membership.png" style="width:67%;"></div>
+				<div class="clearfix"></div><br>
+				<h3 class="text-center h3 text-white">Membership</h3>
+				<div class="clearfix"></div><br>
+				<p id="info" class="text-white">
+					Hi,&nbsp;<b id="userName"></b><br> you'r registered on <b id="memberCatName"></b> membership.<br>
+					<small><span class="fa fa-calendar"></span>&nbsp;&nbsp;Expired date &nbsp;
+					<label class="label label-warning" id="expDate"></label>
+					<br><span class="fa fa-star"></span>&nbsp;&nbsp;Privilage &nbsp;
+					<br><span class="fa fa-book"></span>&nbsp;&nbsp;Policy &nbsp;</small>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div><br>
+	<div class="row" style="margin:0px;">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+			<button type="button"  class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPoll-1">Upgrade Member</button>
+		</div>
+	</div>
+	<div class="row" style="margin:0px;">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<ul class="horNav text-center" id="membershipList">
+			</ul>
+			<div class="tab-content" id="membershipCatDetail">
+			</div>
+		</div>
+	</div>
+
+		  
+	<!-- Modal: modalPoll -->
+	<div class="modal fade right" id="modalPoll-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true" data-backdrop="false">
+	<div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+		<div class="modal-content">
+		<!--Header-->
+		<div class="modal-header purple-gradient">
+			<p class="heading lead">Upgrade membership
+			</p>
+	
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true" class="white-text">×</span>
+			</button>
+		</div>
+	
+		<!--Body-->
+		<div class="modal-body">
+			<div class="text-center">
+			<i class="far fa-id-card fa-4x mb-3 animated rotateIn text-primary"></i>
+			<div class="clearfix"></div><br>
+			<!-- Material input -->
+			 <!-- Subject -->
+			 <label>Membership</label>
+			 <select class="browser-default custom-select mb-4">
+				 <option value="" disabled>Choose option</option>
+				 <option value="1" selected>Platinum</option>
+				 <option value="2">Gold</option>
+				 <option value="3">Silver</option>
+			 </select>
+		</div>
+	
+		<!--Footer-->
+		<div class="modal-footer justify-content-center">
+			<a type="button" class="btn btn-primary waves-effect waves-light">Send
+			<i class="fa fa-paper-plane ml-1"></i>
+			</a>
+			<a type="button" class="btn btn-outline-purple waves-effect" data-dismiss="modal">Cancel</a>
+		</div>
+		</div>
+	</div>
+	</div>
+	<!-- Modal: modalPoll -->
+
+</div>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.min.js"></script>
+</body>
+</html>

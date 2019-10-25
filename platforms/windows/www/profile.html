@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<title>Fit Club</title>
+		<meta name="description" content="">
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+		<!-- Favicons -->
+	
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/icons/apple-touch-icon-144-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icons/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icons/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="assets/images/icons/apple-touch-icon-57-precomposed.png">
+		<!-- <link rel="shortcut icon" href="assets/images/DAS Xpress.png"> -->
+	
+		<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+	
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+		<link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+	
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+		<!-- Bootstrap core CSS -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Material Design Bootstrap -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
+		
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.min.css" rel="stylesheet">
+		<link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<div style="margin:0px;padding:0px;position:fixed;background: #4568DC;
+background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+background: linear-gradient(to right, #B06AB3, #4568DC);
+width:100%;height:100%; opacity: 0.8;">
+</div>
+<div style="background:#fff;width:100%;position:absolute;min-height:100%;right:0px; left:0px;border-radius: 0 75rem 0px 0px;">
+</div>
+<div class="container-fluid">
+	<div style="position:fixed;z-index:999;width:100%;top:0px;right:0px;left:0px;">
+		<nav class="navbar navbar-dark navbar-2 purple-gradient col-12">
+
+			<!-- Navbar brand -->
+			<a class="navbar-brand" href="#"><i class="fas fa-angle-left"></i></a>
+			<center>
+					<h5 class="text-white">Profile</h5>
+			</center>
+			<!-- Collapse button -->
+			<button class="navbar-toggler collapsed col-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent14" aria-controls="navbarSupportedContent14" aria-expanded="false" aria-label="Toggle navigation">
+				<img src="https://media.gq.com/photos/56cca7d9154b2d0e6b12585d/1:1/w_80,c_limit/john-jannuzzi.jpg" width="100%" class="rounded-circle z-depth-0 float-right" alt="avatar image">
+			</button>
+
+			<!-- Collapsible content -->
+			<div class="navbar-collapse collapse" id="navbarSupportedContent14">
+
+				<!-- Links -->
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link waves-effect waves-light" href="#"><i class="fas fa-user-alt"></i>&nbsp;Profile <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-effect waves-light" href="#"><i class="fas fa-id-card-alt"></i>&nbsp;Membership</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-effect waves-light" href="#"><i class="fas fa-cog"></i>&nbsp;Setting</a>
+					</li>
+				</ul>
+				<!-- Links -->
+
+			</div>
+			<!-- Collapsible content -->
+
+		</nav>
+	</div>
+	<div style="width:80%;margin:0px auto;padding-top:20%;" class="mb-4">
+		<div class="row mb-3">
+			<div class="col-12">
+				<!-- Avatar -->
+				<div class="avatar mx-auto text-center">
+					<img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2810%29.jpg" style="max-width:37%;"class="rounded-circle mb-3" alt="woman avatar">
+					<!-- Name -->
+					<h4 class="card-title">Anna Doe</h4>
+				</div>
+			</div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-12">
+				<h6 class="grey-text mb-3"><strong><span class="fa fa-home"></span>&nbsp;Address &nbsp; :</strong>&nbsp;<span>Address</span></h6>
+				<h6 class="grey-text mb-3"><strong><span class="fa fa-envelope"></span>&nbsp;Email &nbsp; :</strong>&nbsp;<span>anna@mail.com</span></h6>
+				<h6 class="grey-text mb-3"><strong><span class="fa fa-phone"></span>&nbsp;Phone &nbsp; :</strong>&nbsp;<span>123456789</span></h6>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 text-center">
+				<i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+				<button type="button"  class="btn btn-primary btn-block" data-toggle="modal" data-target="#modalPoll-1">Edit profile</button>
+		</div>
+	</div>
+		  
+	<!-- Modal: modalPoll -->
+	<div class="modal fade right" id="modalPoll-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true" data-backdrop="false">
+	<div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+		<div class="modal-content">
+		<!--Header-->
+		<div class="modal-header purple-gradient">
+			<p class="heading lead">Edit profile
+			</p>
+	
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true" class="white-text">×</span>
+			</button>
+		</div>
+	
+		<!--Body-->
+		<div class="modal-body">
+			<div class="text-center">
+			<i class="far fa-user-circle fa-4x mb-3 animated rotateIn text-primary"></i>
+
+			<form class="md-form">
+				<div class="file-field">
+					<div class="d-flex justify-content-center">
+					<div class="btn btn-mdb-color btn-rounded float-left">
+						<span>Add photo</span>
+						<input type="file">
+					</div>
+					</div>
+				</div>
+			</form>
+			<!-- Material input -->
+			<div class="md-form">
+				<input type="text" id="form2" class="form-control">
+				<label for="form2">Name</label>
+			</div>
+			<div class="md-form">
+				<input type="text" id="form2" class="form-control">
+				<label for="form2">Email</label>
+			</div>
+			<div class="md-form">
+				<input type="text" id="form3" class="form-control">
+				<label for="form3">Phone</label>
+			</div>
+			<!--Basic textarea-->
+			<div class="md-form">
+			<textarea type="text" id="form79textarea" class="md-textarea form-control" rows="3"></textarea>
+			<label for="form79textarea">Address</label>
+			</div>
+	
+		</div>
+	
+		<!--Footer-->
+		<div class="modal-footer justify-content-center">
+			<a type="button" class="btn btn-primary waves-effect waves-light">Send
+			<i class="fa fa-paper-plane ml-1"></i>
+			</a>
+			<a type="button" class="btn btn-outline-purple waves-effect" data-dismiss="modal">Cancel</a>
+		</div>
+		</div>
+	</div>
+	</div>
+	<!-- Modal: modalPoll -->
+
+	
+</div>
+</body>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.min.js"></script>
+</html>

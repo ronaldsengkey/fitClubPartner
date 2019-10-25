@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+	<title>Fit Club</title>
+	<meta name="description" content="">
+	<meta name="theme-color" content="#484684">
+
+	<!-- Favicons -->
+
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/icons/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icons/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icons/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="assets/images/icons/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="assets/images/DAS Xpress.png">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link href="assets/icons/fontawesome/fontawesome.css" rel="stylesheet" type="text/css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="assets/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="assets/plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="assets/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="assets/plugins/morrisjs/morris.css" rel="stylesheet" />
+	
+	
+	<link href="assets/plugins/sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+	
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/select2.min.css" rel="stylesheet">
+    <link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+	<link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/datedropper.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/timedropper.css" rel="stylesheet" type="text/css">
+	<link href="assets/icons/fontawesome/fontawesome.css" rel="stylesheet" type="text/css">
+	
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+   <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+    <style>
+        /* Loading Spinner */
+        .spinner{margin:0;width:70px;height:18px;margin:-35px 0 0 -9px;position:absolute;top:50%;left:50%;text-align:center}.spinner > div{width:18px;height:18px;background-color:#333;border-radius:100%;display:inline-block;-webkit-animation:bouncedelay 1.4s infinite ease-in-out;animation:bouncedelay 1.4s infinite ease-in-out;-webkit-animation-fill-mode:both;animation-fill-mode:both}.spinner .bounce1{-webkit-animation-delay:-.32s;animation-delay:-.32s}.spinner .bounce2{-webkit-animation-delay:-.16s;animation-delay:-.16s}@-webkit-keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0.0)}40%{-webkit-transform:scale(1.0)}}@keyframes bouncedelay{0%,80%,100%{transform:scale(0.0);-webkit-transform:scale(0.0)}40%{transform:scale(1.0);-webkit-transform:scale(1.0)}}
+		[type="checkbox"].filled-in:not(:checked) + label:after{border:2px solid #fff;}
+   </style>
+	<script type="text/javascript">
+		// function listener cordova
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+		function onDeviceReady() {
+			document.addEventListener("backbutton", onBackKeyDown, false);
+			// document.getElementById("consignmentNote").addEventListener("click", dialogConfirm);
+			// window.addEventListener("orientationchange",updateOrientation);
+		}
+		function onBackKeyDown() {
+			var url = window.location.href.replace(/^.*[\\\/]/, '');
+			if(url == "classHistory.html"){
+				navigator.app.exitApp();
+			}
+			// navigator.app.exitApp();
+		}
+	</script>
+</head>
+
+<body id="classHistoryPage" class="theme-blue bg-indigo" style="background:#484684 !important;">
+	
+<div id="largeModal" class="modal fade" role="dialog" style="margin-top:0px;">
+  <div class="modal-dialog" style="margin:0px;">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header bg-blue" style="padding-top:15px;padding-bottom:15px;padding-right:0px;padding-left:0px;">
+		<!-- <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2"></div> -->
+		<!-- <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4" style="padding:0px;"><button class="btn btn-primary btn-block">Test</button></div> -->
+		<!-- <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4" style="padding:0px;"><button class="btn btn-primary btn-block">Test</button></div> -->
+		<div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 pull-right text-center"><i class="fa fa-times" data-dismiss="modal"></i></div>
+      </div>
+      <div class="modal-body">
+		<label class="text-gradient">Categories</label>
+		<select id="categories" class="form-control"></select>
+		<div class="clearfix"></div><br>
+		<label class="text-gradient">Progress Value</label>
+        <input type="text" class="form-control" id="progressValue">
+      </div>
+      <div class="modal-footer">
+        <!--<button type="button" data-uri="create" data-target="class" data-filter="coachSchedule" class="btn btn-default bg-gradient text-white">Save</button>-->
+      </div>
+    </div>
+
+  </div>
+</div>
+	 <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+<div id="classHistoryPage" class="mainWrap">
+	<section class="profile bgProfile" style="position:fixed;z-index:1;">
+		<div class="row" style="margin:0px;padding-top:20px;">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="btn-group pull-right" style="box-shadow:none;box-shadow:0px;">
+					<i class="material-icons dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">more_vert</i>
+					<ul class="dropdown-menu">
+						<li><a href="javascript:void(0);" class="clickable waves-effect waves-block" data-target="profile">Profile</a></li>
+						<li><a class="clickable waves-effect waves-block" data-target="bodyProgress" id="bodyProgressNav">Body Progress</a></li>
+						<li><a href="javascript:void(0);" class="logout waves-effect waves-block">Logout</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin:0px;">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="text-center">
+					<div class="wrapImg">
+						<!-- <img class="avatar" id="imgUser" src="https://i.pinimg.com/originals/4c/f9/9c/4cf99cccab03d701e7a1ac1e466a04d3.jpg"> -->
+						<img class="avatar" id="imgUser" src="">
+					</div>
+					<div class="clearfix"></div><br>
+					<b class="nameText" id="userName"></b><br>
+					<span id="memberCode"></span>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div></br>
+		<div class="row" style="margin:0px;">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding:0px;">
+				<button class="btn btn-lg btn-block"  style="background:#5B5E9C;" data-target="membership" id="membershipNav">Membership</button>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding:0px;">
+				<button class="btn btn-lg btn-block" style="background:#5B5E9C;" data-target="classHistory" id="classNav">Class History</button>
+			</div>
+		</div>
+	</section>
+	<section id="contentCore" style="position:fixed;height:auto;max-height:500px;padding-top:20px;padding-bottom:225px;overflow-y:auto;overflow-x:hidden;">
+		<div style="margin:0px;" class="row" id="blankClass">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div class="clearfix"></div><br>
+				<div class="text-center">
+					<p>
+						<h4 style="font-weight:200;" class="text-white animated fadeIn">You haven't followed any class</h4>
+					</p>
+				</div>
+				<div class="clearfix"></div><br>
+			</div>
+		</div>
+			<!-- <div style="margin:0px;" class="row"> -->
+				<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"> -->
+					<!-- <div class="card" style="margin-bottom:3px;"> -->
+						<!-- <div class="body" style="color:#fff;background: #4568DC;  /* fallback for old browsers */ -->
+	<!-- background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);  /* Chrome 10-25, Safari 5.1-6 */ -->
+	<!-- background: linear-gradient(to right, #B06AB3, #4568DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ -->
+	<!-- "> -->
+								<!-- <div class="row"> -->
+									<!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> -->
+										<!-- <img src="https://cdn0.iconfinder.com/data/icons/sport-gamification/1000/Best_Strength-512.png" style="width:100%;"> -->
+									<!-- </div> -->
+									<!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"> -->
+										<!-- WEIGHT LIFTING -->
+									<!-- </div> -->
+									<!-- <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"> -->
+										<!-- <small>2018/04/24</small> -->
+									<!-- </div> -->
+								<!-- </div> -->
+						<!-- </div> -->
+					<!-- </div> -->
+				<!-- </div> -->
+			<!-- </div> -->
+		<div id="classArea">
+		</div>
+	</section>
+	<section style="height:50px;z-index:11;background:#484684;position:fixed;left:0px;right:0px;bottom:0px;width:100%;margin:0px;padding:0px;">
+		<ul class="nav nav-justified text-center">
+			<li role="presentation" class="">
+				<button style="background:transparent;box-shadow:none;border-radius:0px;border:none;" type="button" data-uri="read" data-target="class" data-filter="classList" id="addClass" class="animated bounceIn">
+					<i style="font-size:33px;margin-top:10px;"class="material-icons text-white">add</i>
+				</button>
+			</li>
+		</ul>
+		<div class="clearfix"></div><br>
+	</section>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="assets/plugins/jquery/jquery.min.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/datedropper.min.js"></script>
+<script src="assets/js/timedropper.min.js"></script>
+
+<!-- Bootstrap Core Js -->
+<script src="assets/plugins/bootstrap/js/bootstrap.js"></script>
+<script src="assets/plugins/sweetalert/sweetalert.min.js"></script>
+<!-- Select Plugin Js -->
+<script src="assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+<!-- Slimscroll Plugin Js -->
+<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+<!-- Waves Effect Plugin Js -->
+<script src="assets/plugins/node-waves/waves.js"></script>
+
+<!-- Morris Plugin Js -->
+<script src="assets/plugins/raphael/raphael.min.js"></script>
+<script src="assets/plugins/morrisjs/morris.js"></script>
+
+<!-- Sparkline Chart Plugin Js -->
+<script src="assets/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+<script type="text/javascript">
+	<!-- app.initialize(); -->
+	$(function() {
+		<!-- validate(); -->
+		setTimeout(function() {
+			$('.page-loader-wrapper').fadeOut( 400, "linear" );
+		}, 300);
+	});
+</script>
+</body>
+
+</html>
