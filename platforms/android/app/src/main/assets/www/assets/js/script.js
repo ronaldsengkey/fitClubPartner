@@ -25,11 +25,22 @@ $(function() {
 		validate();
 	}if($('#classHistoryPage').length > 0){
 		validate('memberClass');
+	}if($('#classDetail').length > 0){
+		validate('classDetail');
+	}
+	if($('#classSchedule').length > 0){
+		validate('classSchedule');
 	}
 	setTimeout(function() {
 		$('.page-loader-wrapper').fadeOut( 400, "linear" );
 	}, 300);
 });
+$(document).on('click', '.memberClass', function(){
+	let memberClass = {classDetail:$(this).data('classId')};
+	let json = JSON.stringify(memberClass);
+	localStorage.removeItem('classDetail')
+	localStorage.setItem('classDetail',json)
+})
 
 $(document).on('click', '#logout', function(){
 	logout();
@@ -157,6 +168,14 @@ $(document).on('click','button, a',function(){
 	}
 });
 
+$(document).on('click','#joinClass', function(){
+	window.location = 'classSchedule.html';
+});
+
+$(document).on('click', '.selectClass', function(){
+	alert('run')
+})
+
 $(document).on('keyup','.search', function(){
 	var filter = $(this).val(), count = 0;
 	
@@ -221,48 +240,70 @@ function loadingDeactive(){
 	$('.page-loader-wrapper').fadeOut( 400, "linear" );
 }
 
-function validate(param){
+async function validate(param){
 	let dataProfile = JSON.parse(localStorage.getItem("dataProfile"));
-	if( dataProfile){
-		switch(param){
-			case "login":
-				window.location = "classHistory.html";
-				break;
-			case "memberClass":
-				console.log("called");
-				getData("memberClass");
-				break;
-			// default:
-			// 	window.location = "index.html";
-			// 	break;
+	try{
+		if(dataProfile){
+			switch(param){
+				case "login":
+					window.location = "classHistory.html";
+					break;
+				case "memberClass":
+					let c =  await getData("memberClass");
+					console.log(c);
+					let a = document.getElementById('classHistroryWrap');
+					if(c.responseCode == '404'){
+						let html = "<img style='width:50%;' src='https://uploads-ssl.webflow.com/5d1f053cee3b9da3d699a858/5d2aaced187e9368f0c098c9_gym.svg'>"+
+						"<h4>Oops you haven't follow any class yet</h4>"+
+						"<button class='btn btn-block btn-primary mt-3' id='joinClass'>Join Class Now ?</button>";
+						a.innerHTML= html;
+					}
+					// else if(c.responseCode == '401'){
+					// 	logout();
+					// }
+					break;
+				case "classDetail":
+					let gd = await getData(param);
+					break;
+				case "classSchedule":
+					let gda  = await getData(param);
+					break;
+				// default:
+				// 	window.location = "index.html";
+				// 	break;
+			}
+			// if($('#profilePage').length > 0 ){
+				// $('#userName').html(userName);
+				// $('#name').val(userName);
+				// $('.wrapImg').attr('data-id',userId);
+				// $('#updateProfile').attr('data-id',userId);
+				// $('#bodyProgress').attr('data-id',userId);
+				// $('#uploadImgProfile').val(userId);
+				// var param = {'token':12345678,'filter':'getProfile','dataId':userId};
+				// postData('read','user',param);
+			// }if($('#classHistoryPage').length > 0){
+			// 	$('#userName').html(dataProfile.name);
+			// 	$('#name').val(dataProfile.name);
+			// 	var param = {'dataId':dataProfile.memberId};
+				// postData('read','classHistory',param);
+			// }
+			// else{ getPage("",'profile',''); }
+		}else{
+			alert(dataProfile);
+			// switch(param){
+			// 	case "memberClass":
+			// 		logout();
+			// 		break;
+			// }
+			// window.location = "index.html";
+			// logout();
+		// 	if($('#indexPage').length == 0 && $('#registerIntroPage').length == 0 && $('#registerPage').length == 0 && $('#loginPage').length == 0){
+		// 		getPage("","index",'');
+		// 	}
 		}
-		// if($('#profilePage').length > 0 ){
-			// $('#userName').html(userName);
-			// $('#name').val(userName);
-			// $('.wrapImg').attr('data-id',userId);
-			// $('#updateProfile').attr('data-id',userId);
-			// $('#bodyProgress').attr('data-id',userId);
-			// $('#uploadImgProfile').val(userId);
-			// var param = {'token':12345678,'filter':'getProfile','dataId':userId};
-			// postData('read','user',param);
-		// }if($('#classHistoryPage').length > 0){
-		// 	$('#userName').html(dataProfile.name);
-		// 	$('#name').val(dataProfile.name);
-		// 	var param = {'dataId':dataProfile.memberId};
-			// postData('read','classHistory',param);
-		// }
-		// else{ getPage("",'profile',''); }
-	}else{
-		switch(param){
-			case "memberClass":
-				logout();
-				break;
-		}
-		// window.location = "index.html";
-		// logout();
-	// 	if($('#indexPage').length == 0 && $('#registerIntroPage').length == 0 && $('#registerPage').length == 0 && $('#loginPage').length == 0){
-	// 		getPage("","index",'');
-	// 	}
+	}catch(err){
+		console.log(err)
+		return 500;
 	}
 }
 
@@ -316,32 +357,69 @@ $(document).on('click', '#submitOtp', function(){
 		}
 	})
 });
-
-function getData(param){
-	let profile = JSON.parse(localStorage.getItem('dataProfile'));
-	let directory = '';
-	console.log(param)
-	switch(param){
-		case "memberClass":
-			directory = 'class/memberClass/'+profile.data.accessToken;
-			break;
-	}
-	$.ajax({
-		url: urlService+directory,
-		  crossDomain: true,
-		  method: "GET",
-		  headers: {
-			  "Content-Type": "application/json",
-			  "Accept": "*/*",
-			  "Cache-Control": "no-cache",
-			  "Accept-Encoding": "gzip, deflate",
-			  "Connection": "keep-alive",
-	  },
-		success: function(callback){
-			console.log(callback.responseCode);
+function getData(data) {
+	return new Promise(async function (resolve, reject) {
+        try{
+			let profile = JSON.parse(localStorage.getItem('dataProfile'));
+			let directory = '';
+			switch(data){
+				case "memberClass":
+					directory = 'class/memberClass/'+profile.data.accessToken;
+					break;
+				case "classDetail":
+					let p = JSON.parse(localStorage.getItem('classDetail'));
+					directory = 'class/detail/'+profile.data.accessToken+'/'+p.classId;
+					break;
+				case "classSchedule":
+					directory = 'class/'+profile.data.accessToken;
+					break
+			}
+			$.ajax({
+				url: urlService+directory,
+				crossDomain: true,
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json",
+					"Accept": "*/*",
+					"Cache-Control": "no-cache",
+					"Accept-Encoding": "gzip, deflate",
+					"Connection": "keep-alive",
+			},
+				success: function(callback){
+					resolve(callback);
+				}
+			})
+		}catch(err){
+			console.log(err)
+			return 500;
 		}
 	})
 }
+// function getData(param){
+// 	let profile = JSON.parse(localStorage.getItem('dataProfile'));
+// 	let directory = '';
+// 	switch(param){
+// 		case "memberClass":
+// 			directory = 'class/memberClass/'+profile.data.accessToken;
+// 			break;
+// 	}
+// 	$.ajax({
+// 		url: urlService+directory,
+// 		  crossDomain: true,
+// 		  method: "GET",
+// 		  headers: {
+// 			  "Content-Type": "application/json",
+// 			  "Accept": "*/*",
+// 			  "Cache-Control": "no-cache",
+// 			  "Accept-Encoding": "gzip, deflate",
+// 			  "Connection": "keep-alive",
+// 	  },
+// 		success: function(callback){
+// 			console.log('wkwkwkwk ======>', callback);
+// 			return callback;
+// 		}
+// 	})
+// }
 
 function postData(uri,target,dd){
 	loadingActive();
@@ -368,7 +446,7 @@ function postData(uri,target,dd){
 			type: "GET",
 			success: function(callback){
 				loadingDeactive();
-				console.log(callback)
+				console.log('ini ya =====>',callback)
 			}
 		});
 	}else{
