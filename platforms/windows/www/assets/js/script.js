@@ -241,7 +241,7 @@ function loadingDeactive(){
 }
 
 async function validate(param){
-	let dataProfile = JSON.parse(localStorage.getItem("dataProfile"));
+	let dataProfile = localStorage.getItem("dataProfile");
 	try{
 		if(dataProfile){
 			switch(param){
@@ -258,9 +258,9 @@ async function validate(param){
 						"<button class='btn btn-block btn-primary mt-3' id='joinClass'>Join Class Now ?</button>";
 						a.innerHTML= html;
 					}
-					// else if(c.responseCode == '401'){
-					// 	logout();
-					// }
+					else if(c.responseCode == '401'){
+						logout();
+					}
 					break;
 				case "classDetail":
 					let gd = await getData(param);

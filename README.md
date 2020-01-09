@@ -1,22 +1,20 @@
 # Fit Club app [![bitHound Score][bithound-img]][bithound-url]
 
-A Fit Club Android App
+A Fit Club Android App Partner
 
 ## Usage
 
 #### PhoneGap CLI
 
-The hello-world template is the default when you create a new application using the [phonegap-cli][phonegap-cli-url].
+The fitClubPartner is the part of fitClub, This app special for fitClub partner only, to help manage they club data and transaction.
 
-    phonegap create my-app
+    controlling coach
 
-Create an app using this template specifically:
+manage membership
 
-    phonegap create my-app --template hello-world
+    controlling schedule
 
-To see a list of other available PhoneGap templates:
-
-    phonegap template list
+controlling payment transaction
 
 ## [config.xml][config-xml]
 
