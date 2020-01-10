@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     //Horizontal form basic
     $('#wizard_horizontal').steps({
         headerTag: 'h2',

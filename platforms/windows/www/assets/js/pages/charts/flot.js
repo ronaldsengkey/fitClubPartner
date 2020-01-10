@@ -1,4 +1,4 @@
-﻿var data = [], totalPoints = 110;
+var data = [], totalPoints = 110;
 var updateInterval = 320;
 var realtime = 'on';
 

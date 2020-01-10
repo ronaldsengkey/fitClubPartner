@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * jQuery UI Mouse @VERSION
  * http://jqueryui.com
  *

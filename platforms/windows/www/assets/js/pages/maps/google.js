@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     //Basic Map
     var basicMap = new GMaps({
         el: '#gmap_basic_example',

@@ -1,4 +1,4 @@
-﻿/*!
+/*!
  * jQuery UI Position @VERSION
  * http://jqueryui.com
  *

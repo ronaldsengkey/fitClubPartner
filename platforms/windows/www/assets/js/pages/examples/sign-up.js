@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     $('#sign_up').validate({
         rules: {
             'terms': {

@@ -1,4 +1,4 @@
-﻿/* Prevent default on # hrefs */
+/* Prevent default on # hrefs */
 
 $(function() { "use strict";
   $('a[href="#"]').click(function(event) {

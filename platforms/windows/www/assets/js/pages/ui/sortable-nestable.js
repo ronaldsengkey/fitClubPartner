@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     $('.dd').nestable();
 
     $('.dd').on('change', function () {

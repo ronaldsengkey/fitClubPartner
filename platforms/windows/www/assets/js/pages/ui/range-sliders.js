@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     //Taken from http://ionden.com/a/plugins/ion.rangeSlider/demo.html
 
     $("#range_01").ionRangeSlider();

@@ -9,27 +9,27 @@ var backBtn = '<button type="button" id="backBtn" data-target="index" style="pos
 '</button>';
 $(function() {
 	if($('#indexPage').length > 0){
-		validate();
+		// validate();
 	}
 	if($('#loginPage').length > 0){
-		validate('login');
+		// validate('login');
 		// $('body').append(backBtn);
 		// controlBackBtn('registration');
 	}
 	if($('#registerPage').length > 0){
 		// $('body').append(backBtn);
 		// controlBackBtn('index');
-		validate();
+		// validate();
 		select2Activated();
 	}if($('#profilePage').length > 0){
-		validate();
+		// validate();
 	}if($('#classHistoryPage').length > 0){
-		validate('memberClass');
+		// validate('memberClass');
 	}if($('#classDetail').length > 0){
-		validate('classDetail');
+		// validate('classDetail');
 	}
 	if($('#classSchedule').length > 0){
-		validate('classSchedule');
+		// validate('classSchedule');
 	}
 	setTimeout(function() {
 		$('.page-loader-wrapper').fadeOut( 400, "linear" );

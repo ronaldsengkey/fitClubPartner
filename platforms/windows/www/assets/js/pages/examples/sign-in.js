@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     $('#sign_in').validate({
         highlight: function (input) {
             console.log(input);

@@ -1,4 +1,4 @@
-﻿(function ($, moment)
+(function ($, moment)
 {
    var pluginName = "bootstrapMaterialDatePicker";
    var pluginDataName = "plugin_" + pluginName;

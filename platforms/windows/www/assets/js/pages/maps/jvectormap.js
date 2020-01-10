@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     $('#world-map-markers').vectorMap({
         map: 'world_mill_en',
         normalizeFunction: 'polynomial',

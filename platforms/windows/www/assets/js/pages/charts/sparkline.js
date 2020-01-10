@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     $(".sparkline").each(function () {
         var $this = $(this);
         $this.sparkline('html', $this.data());

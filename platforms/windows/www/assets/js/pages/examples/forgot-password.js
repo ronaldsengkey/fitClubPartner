@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     $('#forgot_password').validate({
         highlight: function (input) {
             console.log(input);
