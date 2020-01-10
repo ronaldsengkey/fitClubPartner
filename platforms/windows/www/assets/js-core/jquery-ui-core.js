@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * jQuery UI Core @VERSION
  * http://jqueryui.com
  *

@@ -1,4 +1,4 @@
-$(function () {
+﻿$(function () {
     $('.js-animations').bind('change', function () {
         var animation = $(this).val();
         $('.js-animating-object').animateCss(animation);

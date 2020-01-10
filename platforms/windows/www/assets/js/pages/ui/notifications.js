@@ -1,4 +1,4 @@
-$(function () {
+﻿$(function () {
     $('.jsdemo-notification-button button').on('click', function () {
         var placementFrom = $(this).data('placement-from');
         var placementAlign = $(this).data('placement-align');

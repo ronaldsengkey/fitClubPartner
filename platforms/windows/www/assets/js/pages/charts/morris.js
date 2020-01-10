@@ -1,4 +1,4 @@
-$(function () {
+﻿$(function () {
     getMorris('line', 'line_chart');
     getMorris('bar', 'bar_chart');
     getMorris('area', 'area_chart');

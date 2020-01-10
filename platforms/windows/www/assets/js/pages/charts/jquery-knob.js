@@ -1,4 +1,4 @@
-$(function () {
+﻿$(function () {
     $('.knob').knob({
         draw: function () {
             // "tron" case

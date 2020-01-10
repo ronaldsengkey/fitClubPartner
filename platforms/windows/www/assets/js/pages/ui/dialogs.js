@@ -1,4 +1,4 @@
-$(function () {
+﻿$(function () {
     $('.js-sweetalert button').on('click', function () {
         var type = $(this).data('type');
         if (type === 'basic') {
