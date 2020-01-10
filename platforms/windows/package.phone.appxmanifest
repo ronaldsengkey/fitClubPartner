@@ -32,8 +32,8 @@
         </Application>
     </Applications>
     <Capabilities>
-        <m3:Capability Name="contacts" />
         <Capability Name="internetClientServer" />
+        <m3:Capability Name="contacts" />
         <DeviceCapability Name="webcam" />
     </Capabilities>
 </Package>
