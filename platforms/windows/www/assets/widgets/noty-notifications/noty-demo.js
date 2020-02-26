@@ -1,4 +1,4 @@
-﻿  /* Noty */
+  /* Noty */
 
   $(function() {
 

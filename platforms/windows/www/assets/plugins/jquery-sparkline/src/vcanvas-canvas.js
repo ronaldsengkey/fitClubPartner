@@ -1,4 +1,4 @@
-﻿    VCanvas_canvas = createClass(VCanvas_base, {
+    VCanvas_canvas = createClass(VCanvas_base, {
         init: function (width, height, target, interact) {
             VCanvas_canvas._super.init.call(this, width, height, target);
             this.canvas = document.createElement('canvas');

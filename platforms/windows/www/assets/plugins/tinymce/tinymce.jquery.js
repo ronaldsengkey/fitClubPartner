@@ -1,4 +1,4 @@
-﻿window.console && console.log('Use tinymce.js instead of tinymce.jquery.js.');
+window.console && console.log('Use tinymce.js instead of tinymce.jquery.js.');
 // 4.4.1 (2016-07-26)
 
 /**

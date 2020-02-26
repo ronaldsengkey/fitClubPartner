@@ -1,4 +1,4 @@
-﻿/* jQuery UI Datepicker */
+/* jQuery UI Datepicker */
 
 $(function() {
     "use strict";

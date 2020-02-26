@@ -1,4 +1,4 @@
-﻿var examples = require('./examples');
+var examples = require('./examples');
 
 examples.def('line', function () {
   Morris.Line({

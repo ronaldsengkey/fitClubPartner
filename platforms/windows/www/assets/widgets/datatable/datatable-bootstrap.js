@@ -1,4 +1,4 @@
-﻿/* Set the defaults for DataTables initialisation */
+/* Set the defaults for DataTables initialisation */
 $.extend( true, $.fn.dataTable.defaults, {
     "sDom":
     "<'row'<'col-sm-6'l><'col-sm-6'f>r>"+

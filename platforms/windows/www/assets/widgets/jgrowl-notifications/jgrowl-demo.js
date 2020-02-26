@@ -1,4 +1,4 @@
-﻿  /* jGrowl notifications */
+  /* jGrowl notifications */
 
   $(function() {
 

@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
   eval($('#code').text());
   prettyPrint();
 });

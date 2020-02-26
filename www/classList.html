@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+	<title>Fit Club</title>
+	<meta name="description" content="">
+
+	<!-- Favicons -->
+
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/icons/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/icons/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/icons/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="assets/images/icons/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="assets/images/DAS Xpress.png">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+     <!-- Google Fonts -->
+	 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+	 <link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+ 
+	 <!-- Font Awesome -->
+	 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+	 <!-- Bootstrap core CSS -->
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	 <!-- Material Design Bootstrap -->
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
+	 
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.min.css" rel="stylesheet">
+	
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+   <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+    <style>
+        /* Loading Spinner */
+        .spinner{margin:0;width:70px;height:18px;margin:-35px 0 0 -9px;position:absolute;top:50%;left:50%;text-align:center}.spinner > div{width:18px;height:18px;background-color:#333;border-radius:100%;display:inline-block;-webkit-animation:bouncedelay 1.4s infinite ease-in-out;animation:bouncedelay 1.4s infinite ease-in-out;-webkit-animation-fill-mode:both;animation-fill-mode:both}.spinner .bounce1{-webkit-animation-delay:-.32s;animation-delay:-.32s}.spinner .bounce2{-webkit-animation-delay:-.16s;animation-delay:-.16s}@-webkit-keyframes bouncedelay{0%,80%,100%{-webkit-transform:scale(0.0)}40%{-webkit-transform:scale(1.0)}}@keyframes bouncedelay{0%,80%,100%{transform:scale(0.0);-webkit-transform:scale(0.0)}40%{transform:scale(1.0);-webkit-transform:scale(1.0)}}
+    </style>
+	<script type="text/javascript">
+		// function listener cordova
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+		function onDeviceReady() {
+			document.addEventListener("backbutton", onBackKeyDown, false);
+			// document.getElementById("consignmentNote").addEventListener("click", dialogConfirm);
+			// window.addEventListener("orientationchange",updateOrientation);
+		}
+		function onBackKeyDown() {
+			var url = window.location.href.replace(/^.*[\\\/]/, '');
+			if(url == "profile.html"){
+				window.location.href = 'classHistory.html';
+				<!-- navigator.app.exitApp(); -->
+			}
+			// navigator.app.exitApp();
+		}
+		// End function Listener cordova
+	</script>
+</head>
+
+<body class="theme-blue bg-indigo" id="classDetail" style="background:#454477 !important;">
+	
+<div style="margin:0px;padding:0px;position:fixed;background: #4568DC;
+background: -webkit-linear-gradient(to right, #B06AB3, #4568DC);
+background: linear-gradient(to right, #B06AB3, #4568DC);
+width:100%;height:100%; opacity: 0.8;"></div>
+<div class="container-fluid">
+	<div style="position:fixed;z-index:999;width:100%;top:0px;right:0px;left:0px;">
+		<nav class="navbar navbar-dark navbar-2 purple-gradient col-12">
+
+			<!-- Navbar brand -->
+			<a class="navbar-brand" href="#"><i class="fas fa-angle-left"></i></a>
+			<center>
+					<h5 class="text-white">Class List</h5>
+			</center>
+			<!-- Collapse button -->
+			<button class="navbar-toggler collapsed col-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent14" aria-controls="navbarSupportedContent14" aria-expanded="false" aria-label="Toggle navigation">
+				<img src="https://media.gq.com/photos/56cca7d9154b2d0e6b12585d/1:1/w_80,c_limit/john-jannuzzi.jpg" width="100%" class="rounded-circle z-depth-0 float-right" alt="avatar image">
+			</button>
+
+			<!-- Collapsible content -->
+			<div class="navbar-collapse collapse" id="navbarSupportedContent14">
+
+				<!-- Links -->
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link waves-effect waves-light" href="#"><i class="fas fa-user-alt"></i>&nbsp;Profile <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-effect waves-light" href="#"><i class="fas fa-id-card-alt"></i>&nbsp;Partnership</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link waves-effect waves-light" href="#"><i class="fas fa-cog"></i>&nbsp;Setting</a>
+					</li>
+					<li class="nav-item" id="logout">
+						<a class="nav-link waves-effect waves-light" href="#"><i class="fas fa-power-off"></i>&nbsp;Logout</a>
+					</li>
+				</ul>
+				<!-- Links -->
+
+			</div>
+			<!-- Collapsible content -->
+
+		</nav>
+	</div>
+
+	<div class="row" style="padding-top:58px;">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-sm-12 text-justify" style="padding:0px;">
+			<div class="text-center" >
+				<img src="https://www.celebrityfitness.com.ph/-/media/project/evolution-wellness/celebrity-fitness/south-east-asia/philippines/class-slider/playground/playground_3.png" style="width:100%;opacity: 0.4;">
+				<!-- <h3 id="titleClass">Class Title</h3>
+				<small>schedule date</small> -->
+			</div>
+		</div>
+	</div>
+
+	<div style="background:#fff;width:100%;position:absolute;min-height:100%;right:0px; left:0px;top:121px;border-radius: 0 18rem 0px 0px;">
+		<div style="width:90%;margin:0px auto;margin-top:0%;z-index:3;">
+			<!-- Card Wider -->
+			<div class="card card-cascade wider p-0" style="-webkit-box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+			-moz-box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);
+			box-shadow: 0px -4px 3px rgba(50, 50, 50, 0.75);">
+				<div class="card-body card-body-cascade text-left p-0">
+					<div class="row m-0">
+						<div class="col-12">
+							<div class="rounded-bottom  text-right pt-3 white">
+								<ul class="list-unstyled list-inline font-small text-muted">
+								  <li class="list-inline-item pr-2 "><input type="text" placeholder="type to search.." class="form-control" style="height:26px;"></li>
+								  <li class="list-inline-item pr-2"><a href="#" class="text-dark"><i class="fas fa-filter"></i>
+									  </i></a></li>
+								</ul>
+								<hr>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">
+									<div class="row mb-3">
+										<div class="col-lg-3 col-3">
+											<div class="news">
+												<div class="label">
+													<img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20)-mini.jpg" style="width:110%;" class="rounded-circle z-depth-1-half">
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-9 col-9">
+											<div class="excerpt mb-0">
+												<div class="brief">
+													<div class="date m-0 p-0 text-right text-muted"><small>3-02-2019</small></div>
+													<p class="mb-2">
+														<b class="h5 text-dark">Cardio</b><br>
+														<small>Donec id elit non mi porta.</small> 
+													</p>
+												</div>
+												<div class="feed-footer">
+													<div class="row m-0">
+														<div class="col-6 text-left p-0">
+															<a>47</a>
+															<a class="thumbs" data-toggle="tooltip" data-placement="top" title="" data-original-title="I like it">
+																<i class="fas fa-thumbs-up text-primary"></i>
+															</a>
+														</div>
+														<div class="col-6 text-right p-0">
+															<a>0</a>
+															<a class="thumbs" data-toggle="tooltip" data-placement="top" title="" data-original-title="I don't like it">
+																<i class="fas fa-thumbs-down text-danger"></i>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="list-group-item">
+									<div class="row mb-3">
+										<div class="col-lg-3 col-3">
+											<div class="news">
+												<div class="label">
+													<img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20)-mini.jpg" style="width:110%;" class="rounded-circle z-depth-1-half">
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-9 col-9">
+											<div class="excerpt mb-0">
+												<div class="brief">
+													<div class="date m-0 p-0 text-right text-muted"><small>3-02-2019</small></div>
+													<p class="mb-2">
+														<b class="h5 text-dark">Yoga</b><br>
+														<small>Donec id elit non mi porta.</small> 
+													</p>
+												</div>
+												<div class="feed-footer">
+													<div class="row m-0">
+														<div class="col-6 text-left p-0">
+															<a>47</a>
+															<a class="thumbs" data-toggle="tooltip" data-placement="top" title="" data-original-title="I like it">
+																<i class="fas fa-thumbs-up text-primary"></i>
+															</a>
+														</div>
+														<div class="col-6 text-right p-0">
+															<a>0</a>
+															<a class="thumbs" data-toggle="tooltip" data-placement="top" title="" data-original-title="I don't like it">
+																<i class="fas fa-thumbs-down text-danger"></i>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="list-group-item">
+									<div class="row mb-3">
+										<div class="col-lg-3 col-3">
+											<div class="news">
+												<div class="label">
+													<img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20)-mini.jpg" style="width:110%;" class="rounded-circle z-depth-1-half">
+												</div>
+											</div>
+										</div>
+										<div class="col-lg-9 col-9">
+											<div class="excerpt mb-0">
+												<div class="brief">
+													<div class="date m-0 p-0 text-right text-muted"><small>3-02-2019</small></div>
+													<p class="mb-2">
+														<b class="h5 text-dark">Body Pump</b><br>
+														<small>Donec id elit non mi porta.</small> 
+													</p>
+												</div>
+												<div class="feed-footer">
+													<div class="row m-0">
+														<div class="col-6 text-left p-0">
+															<a>47</a>
+															<a class="thumbs" data-toggle="tooltip" data-placement="top" title="" data-original-title="I like it">
+																<i class="fas fa-thumbs-up text-primary"></i>
+															</a>
+														</div>
+														<div class="col-6 text-right p-0">
+															<a>0</a>
+															<a class="thumbs" data-toggle="tooltip" data-placement="top" title="" data-original-title="I don't like it">
+																<i class="fas fa-thumbs-down text-danger"></i>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/js/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/datedropper/2.0/datedropper.min.js"></script>
+
+<script src="assets/plugins/sweetalert/sweetalert.min.js"></script>
+
+<!-- Select Plugin Js -->
+<script src="assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+
+<script type="text/javascript">
+	<!-- app.initialize(); -->
+	$(function() {
+		<!-- validate(); -->
+		setTimeout(function() {
+			$('.page-loader-wrapper').fadeOut( 400, "linear" );
+		}, 300);
+	});
+</script>
+</body>
+
+</html>

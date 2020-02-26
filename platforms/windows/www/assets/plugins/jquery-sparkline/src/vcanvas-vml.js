@@ -1,4 +1,4 @@
-﻿    VCanvas_vml = createClass(VCanvas_base, {
+    VCanvas_vml = createClass(VCanvas_base, {
         init: function (width, height, target) {
             var groupel;
             VCanvas_vml._super.init.call(this, width, height, target);

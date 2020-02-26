@@ -1,4 +1,4 @@
-﻿/* Admin layout options */
+/* Admin layout options */
 
 $(document).on('ready', function() {
 

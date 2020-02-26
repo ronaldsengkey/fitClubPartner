@@ -1,4 +1,4 @@
-﻿/* Sparklines charts */
+/* Sparklines charts */
 
 $(function() {
     "use strict";

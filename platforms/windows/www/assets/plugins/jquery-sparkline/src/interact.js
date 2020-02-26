@@ -1,4 +1,4 @@
-﻿    MouseHandler = createClass({
+    MouseHandler = createClass({
         init: function (el, options) {
             var $el = $(el);
             this.$el = $el;
