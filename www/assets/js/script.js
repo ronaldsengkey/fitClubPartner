@@ -35,6 +35,35 @@ $(function() {
 		$('.page-loader-wrapper').fadeOut( 400, "linear" );
 	}, 300);
 });
+$(document).on('click', '#viewFilter', function(){
+	let content = '';
+	switch($(this).data('target')){
+		case "classList":
+			content = '<div class="row"><div class="col-12"><div class="card">'+
+		 '<div class="card-body">'+
+			'<div class="row">'+
+				'<div class="col-12">'+
+					'<label>Place</label>'+
+					'<select class="form-control" id="place"></select>'+
+				'</div>'+
+			'</div>'+
+			'<div class="clearfix"></div><br>'+
+			'<div class="row">'+
+				'<div class="col-12">'+
+					'<input type="text" class="form-control datePicker" placeholder="mm-dd-yyyy">'+
+				'</div>'+
+			'</div>'+
+		'</div>';
+			break;
+	}
+	console.log(content);
+	callModal(content);
+	datePickerActive();
+})
+
+function datePickerActive(){
+	$('.datePicker').dateDropper();
+}
 $(document).on('click', '.memberClass', function(){
 	let memberClass = {classDetail:$(this).data('classId')};
 	let json = JSON.stringify(memberClass);
@@ -87,7 +116,6 @@ $(document).on('submit','#imgProfile',(function(e) {
 		// alert("Please upload a valid image file.");
 	}
 }));
-
 
 $(document).on('click','.clickable',function(){
 	target = $(this).data('target');
