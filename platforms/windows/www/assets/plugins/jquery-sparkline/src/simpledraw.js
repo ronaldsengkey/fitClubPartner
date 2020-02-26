@@ -1,4 +1,4 @@
-﻿    // Provide a cross-browser interface to a few simple drawing primitives
+    // Provide a cross-browser interface to a few simple drawing primitives
     $.fn.simpledraw = function (width, height, useExisting, interact) {
         var target, mhandler;
         if (useExisting && (target = this.data('_jqs_vcanvas'))) {

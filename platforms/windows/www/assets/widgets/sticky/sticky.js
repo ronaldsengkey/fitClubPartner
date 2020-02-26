@@ -1,4 +1,4 @@
-﻿// jQuery HC-Sticky
+// jQuery HC-Sticky
 // =============
 // Version: 1.2.43
 // Copyright: Some Web Media

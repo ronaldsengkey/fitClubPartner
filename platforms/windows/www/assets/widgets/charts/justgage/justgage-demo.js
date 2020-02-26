@@ -1,4 +1,4 @@
-﻿/* justGage charts */
+/* justGage charts */
 
 $(function() {
     "use strict";

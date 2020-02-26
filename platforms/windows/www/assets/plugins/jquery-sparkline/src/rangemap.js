@@ -1,4 +1,4 @@
-﻿    $.RangeMapClass = RangeMap = createClass({
+    $.RangeMapClass = RangeMap = createClass({
         init: function (map) {
             var key, range, rangelist = [];
             for (key in map) {

@@ -1,4 +1,4 @@
-﻿$(function() { "use strict";
+$(function() { "use strict";
     $("input[name='touchspin-demo-1']").TouchSpin({
         min: 0,
         max: 100,

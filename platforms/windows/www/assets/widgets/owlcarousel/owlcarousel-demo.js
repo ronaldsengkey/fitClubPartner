@@ -1,4 +1,4 @@
-﻿/* Carousel */
+/* Carousel */
 
 $(document).ready(function() {
 

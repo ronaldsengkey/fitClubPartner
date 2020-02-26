@@ -1,4 +1,4 @@
-﻿/* Flot plugin for showing crosshairs when the mouse hovers over the plot.
+/* Flot plugin for showing crosshairs when the mouse hovers over the plot.
 
 Copyright (c) 2007-2014 IOLA and Ole Laursen.
 Licensed under the MIT license.

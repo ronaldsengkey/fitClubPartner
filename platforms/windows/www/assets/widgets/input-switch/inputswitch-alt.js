@@ -1,4 +1,4 @@
-﻿(function( $ ) {
+(function( $ ) {
     $.fn.simpleCheckbox = function(options) {
         var defaults = {
             newElementClass: 'switch-toggle',

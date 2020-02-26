@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+$(document).ready(function() {
 
     map1 = new GMaps({
         div: '#map-basic',

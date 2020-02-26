@@ -1,4 +1,4 @@
-﻿/* Progress bars */
+/* Progress bars */
 
 function progress(percent, element) {
     var progressBarWidth = percent * element.width() / 100;

@@ -1,4 +1,4 @@
-﻿/* Ion RangeSlider */
+/* Ion RangeSlider */
 
 $(function() {
     "use strict";

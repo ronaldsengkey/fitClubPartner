@@ -1,4 +1,4 @@
-﻿    /* RangeSlider demo */
+    /* RangeSlider demo */
 
     $(function() {
         "use strict";

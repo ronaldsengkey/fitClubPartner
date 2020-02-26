@@ -1,4 +1,4 @@
-﻿    initStyles = function() {
+    initStyles = function() {
         addCSS(defaultStyles);
     };
 

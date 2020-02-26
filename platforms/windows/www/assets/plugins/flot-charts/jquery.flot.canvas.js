@@ -1,4 +1,4 @@
-﻿/* Flot plugin for drawing all elements of a plot on the canvas.
+/* Flot plugin for drawing all elements of a plot on the canvas.
 
 Copyright (c) 2007-2014 IOLA and Ole Laursen.
 Licensed under the MIT license.

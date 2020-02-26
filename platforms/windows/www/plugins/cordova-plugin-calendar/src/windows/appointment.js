@@ -1,4 +1,4 @@
-﻿cordova.define("cordova-plugin-calendar.appointment", function(require, exports, module) {
+cordova.define("cordova-plugin-calendar.appointment", function(require, exports, module) {
 var appointment = {
     createEventWithOptions: function (successCallback, errorCallback, options) {
         var o = {

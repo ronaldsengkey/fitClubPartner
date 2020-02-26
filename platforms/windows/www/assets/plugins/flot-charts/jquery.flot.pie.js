@@ -1,4 +1,4 @@
-﻿/* Flot plugin for rendering pie charts.
+/* Flot plugin for rendering pie charts.
 
 Copyright (c) 2007-2014 IOLA and Ole Laursen.
 Licensed under the MIT license.

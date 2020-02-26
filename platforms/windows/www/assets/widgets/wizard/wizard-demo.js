@@ -1,4 +1,4 @@
-﻿/* Form wizard */
+/* Form wizard */
 
 $(function() {
     "use strict";
